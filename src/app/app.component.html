@@ -1,15 +1,1 @@
-<div>
-  <h1>App Component</h1>
-  <app-alert message="Success Alert." severity="success"></app-alert>
-  <app-alert message="Info Alert." severity="info"></app-alert>
-  <app-alert message="Warning Alert." severity="warning"></app-alert>
-  <app-alert message="Danger Alert." severity="danger"></app-alert>
-</div>
-
-<hr>
-<div>
-  <app-button class="btn" label="Primary Button" severity="primary" type="submit"></app-button>
-  <app-button class="btn" label="Danger Button" severity="danger" type="reset"></app-button>
-  <app-button class="btn" label="Success Button" severity="success" type="button" [disabled]="true"></app-button>
-  <app-button class="btn" label="Click Me" (onClick)="clicked()"></app-button>
-</div>
+<router-outlet></router-outlet>

@@ -6,12 +6,20 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { AlertComponent } from './shared/components/alert/alert.component';
 import { ButtonComponent } from './shared/components/button/button.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { AboutComponent } from './pages/about/about.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlertComponent,
-    ButtonComponent
+    ButtonComponent,
+    ContactComponent,
+    AboutComponent,
+    HomeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
