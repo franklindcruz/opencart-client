@@ -1,29 +1,15 @@
-<div class="container">
-  <h1 class="text-center">Users</h1>
-  <table *ngIf="users" class="table table-striped table-bordered table-hover">
-      <thead>
-          <tr>
-              <th>Image</th>
-              <th>Id</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Role</th>
-          </tr>
-      </thead>
+<div>
+  <h1>App Component</h1>
+  <app-alert message="Success Alert." severity="success"></app-alert>
+  <app-alert message="Info Alert." severity="info"></app-alert>
+  <app-alert message="Warning Alert." severity="warning"></app-alert>
+  <app-alert message="Danger Alert." severity="danger"></app-alert>
+</div>
 
-      <tbody>
-          <tr *ngFor="let user of users">
-              <td>
-                  <img [src]="user.avatar" height="50px" />
-              </td>
-              <td>{{ user.id }}</td>
-              <td>{{ user.firstName }} {{ user.lastName }}</td>
-              <td>{{ user.email }}</td>
-              <td>
-                  <span class="badge bg-primary" *ngIf="user.role === 'admin'">Admin</span>
-                  <span class="badge bg-success" *ngIf="user.role === 'user'">User</span>
-              </td>
-          </tr>
-      </tbody>
-  </table>
+<hr>
+<div>
+  <app-button class="btn" label="Primary Button" severity="primary" type="submit"></app-button>
+  <app-button class="btn" label="Danger Button" severity="danger" type="reset"></app-button>
+  <app-button class="btn" label="Success Button" severity="success" type="button" [disabled]="true"></app-button>
+  <app-button class="btn" label="Click Me" (onClick)="clicked()"></app-button>
 </div>

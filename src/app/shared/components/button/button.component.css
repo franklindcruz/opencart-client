@@ -1,0 +1,33 @@
+button {
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  border-width: 2px 4px 4px 2px;
+  border-style: solid;
+  border-color: var(--black-color);
+  cursor: pointer;
+  transition-duration: .05s;
+}
+.btn{
+  margin: 5px;
+}
+button:hover {
+  font-weight: bold;
+}
+
+.primary {
+  background-color: var(--primary-color);
+}
+
+.success {
+  background-color: var(--success-color);
+}
+
+.danger {
+  background-color: var(--danger-color);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

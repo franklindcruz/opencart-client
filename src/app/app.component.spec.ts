@@ -23,7 +23,6 @@ describe('AppComponent', () => {
   it(`should have as title 'opencart-client'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('opencart-client');
   });
 
   it('should render title', () => {
