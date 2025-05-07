@@ -3,8 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { AdminLayoutComponent } from './shared/components/admin-layout/admin-layout.component';
 
+
 const routes: Routes = [
-  { path: '', component: AdminLayoutComponent}
+  {
+    path: '',
+    component: AdminLayoutComponent,
+    children: [
+      { path: '', component: DashboardComponent }
+
+    ],
+  },
 ];
 
 @NgModule({
