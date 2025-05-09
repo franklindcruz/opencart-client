@@ -9,8 +9,8 @@ import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
 import { LoadingIndicatorComponent } from '../shared/components/loading-indicator/loading-indicator.component';
 import { CategoryListComponent } from './features/category/category-list/category-list.component';
 import { CategoryCreateComponent } from './features/category/category-create/category-create.component';
-import { ButtonComponent } from "../shared/components/button/button.component";
-
+import { ButtonComponent } from '../shared/components/button/button.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,13 +19,14 @@ import { ButtonComponent } from "../shared/components/button/button.component";
     AdminLayoutComponent,
     SidebarComponent,
     CategoryListComponent,
-    CategoryCreateComponent
+    CategoryCreateComponent,
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
+    FormsModule,
     LoadingIndicatorComponent,
-    ButtonComponent
-]
+    ButtonComponent,
+  ],
 })
-export class AdminModule { }
+export class AdminModule {}
