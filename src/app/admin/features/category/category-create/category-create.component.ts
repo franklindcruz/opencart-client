@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import CategoryCreateDto from '../../../../shared/dtos/category-create-dto';
+import { NgModel } from '@angular/forms';
 
 
 @Component({
@@ -9,8 +10,12 @@ import CategoryCreateDto from '../../../../shared/dtos/category-create-dto';
   styleUrl: './category-create.component.css',
 })
 export class CategoryCreateComponent {
-  model: CategoryCreateDto = {
-    name: '',
-    description: null,
-  };
+    model: CategoryCreateDto = {
+        name: '',
+        description: null
+    }
+
+    display(name: NgModel) {
+        console.log(name);
+    }
 }
