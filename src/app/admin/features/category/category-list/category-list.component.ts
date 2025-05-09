@@ -16,7 +16,7 @@ export class CategoryListComponent implements OnInit {
 
   ngOnInit(): void {
     this.httpClient
-      .get<Result<CategoryViewDto[]>>('http://localhost:5184/api/Category')
+      .get<Result<CategoryViewDto[]>>('http://localhost:5150/Category')
       .subscribe((res) => {
         this.categories = res.data;
       });

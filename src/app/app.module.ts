@@ -13,6 +13,7 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BadgeComponent } from './shared/components/badge/badge.component';
+import { LoadingIndicatorComponent } from './shared/components/loading-indicator/loading-indicator.component';
 
 
 
@@ -26,7 +27,8 @@ import { BadgeComponent } from './shared/components/badge/badge.component';
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    BadgeComponent
+    BadgeComponent,
+    LoadingIndicatorComponent
   ],
   imports: [
     BrowserModule,
