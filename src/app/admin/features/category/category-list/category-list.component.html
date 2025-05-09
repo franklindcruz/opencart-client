@@ -1,1 +1,26 @@
-<p>category-list works!</p>
+<h1>Categories</h1>
+
+<table *ngIf="categories">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let category of categories">
+            <td>{{ category.id }}</td>
+            <td>{{ category.name }}</td>
+            <td>{{ category.description }}</td>
+            <td>
+                Edit | Delete
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ngIf="!categories">
+    <p>Loading...</p>
+</div>
