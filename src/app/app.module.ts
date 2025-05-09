@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { AlertComponent } from './shared/components/alert/alert.component';
-import { ButtonComponent } from './shared/components/button/button.component';
+
 import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -14,11 +14,11 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BadgeComponent } from './shared/components/badge/badge.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     AlertComponent,
-    ButtonComponent,
     ContactComponent,
     AboutComponent,
     HomeComponent,

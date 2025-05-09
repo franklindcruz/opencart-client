@@ -6,8 +6,10 @@ import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { AdminLayoutComponent } from './shared/components/admin-layout/admin-layout.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
-import { CategoryListComponent } from './features/category/category-list/category-list.component';
 import { LoadingIndicatorComponent } from '../shared/components/loading-indicator/loading-indicator.component';
+import { CategoryListComponent } from './features/category/category-list/category-list.component';
+import { CategoryCreateComponent } from './features/category/category-create/category-create.component';
+import { ButtonComponent } from "../shared/components/button/button.component";
 
 
 @NgModule({
@@ -16,12 +18,14 @@ import { LoadingIndicatorComponent } from '../shared/components/loading-indicato
     NavbarComponent,
     AdminLayoutComponent,
     SidebarComponent,
-    CategoryListComponent
+    CategoryListComponent,
+    CategoryCreateComponent
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
-    LoadingIndicatorComponent
-  ]
+    LoadingIndicatorComponent,
+    ButtonComponent
+]
 })
 export class AdminModule { }

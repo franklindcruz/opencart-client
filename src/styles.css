@@ -63,3 +63,25 @@ body {
 .flex-col {
     flex-direction: column;
 }
+
+.justify-content-end {
+    justify-content: end;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 10px 0;
+}
+
+.form-control {
+    border: 1px solid #a8a8a8;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-control:focus {
+    outline: 1px solid var(--success-color);
+}
