@@ -7,8 +7,6 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { AdminLayoutComponent } from './shared/components/admin-layout/admin-layout.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { CategoryListComponent } from './features/category/category-list/category-list.component';
-import { CategoryCreateComponent } from './features/category/category-create/category-create.component';
-
 
 
 @NgModule({
@@ -17,8 +15,7 @@ import { CategoryCreateComponent } from './features/category/category-create/cat
     NavbarComponent,
     AdminLayoutComponent,
     SidebarComponent,
-    CategoryListComponent,
-    CategoryCreateComponent
+    CategoryListComponent
   ],
   imports: [
     CommonModule,

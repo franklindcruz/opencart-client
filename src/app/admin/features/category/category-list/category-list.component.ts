@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './category-list.component.css',
 })
 export class CategoryListComponent implements OnInit {
+  
   categories?: CategoryViewDto[];
 
   constructor(private httpClient: HttpClient) {}
