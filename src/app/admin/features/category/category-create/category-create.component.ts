@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import CategoryCreateDto from '../../../../shared/dtos/category-create-dto';
 import { NgForm, NgModel } from '@angular/forms';
 import { CategoryService } from '../../../../shared/services/category.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-category-create',
@@ -10,24 +11,26 @@ import { CategoryService } from '../../../../shared/services/category.service';
   styleUrl: './category-create.component.css',
 })
 export class CategoryCreateComponent {
-    model: CategoryCreateDto = {
-        name: '',
-        description: null
-    }
+  model: CategoryCreateDto = {
+    name: '',
+    description: null,
+  };
 
-    isProcessing = false;
+  isProcessing = false;
 
-    constructor(private categoryService: CategoryService) {
+  constructor(
+    private categoryService: CategoryService,
+    private router: Router
+  ) {}
 
-    }
-
-    onSubmit(form: NgForm) {
-        this.isProcessing = true;
-        this.categoryService.create(this.model).subscribe(result => {
-            console.log(result);
-            this.model.name = '';
-            this.model.description = null;
-            this.isProcessing = false;
-        });
-    }
+  onSubmit(form: NgForm) {
+    this.isProcessing = true;
+    this.categoryService.create(this.model).subscribe((result) => {
+      console.log(result);
+      this.model.name = '';
+      this.model.description = null;
+      this.isProcessing = false;
+      this.router.navigateByUrl('/admin/category');
+    });
+  }
 }
