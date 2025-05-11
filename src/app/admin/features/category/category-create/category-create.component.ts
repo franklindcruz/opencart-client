@@ -15,7 +15,4 @@ export class CategoryCreateComponent {
         description: null
     }
 
-    display(name: NgModel) {
-        console.log(name);
-    }
 }

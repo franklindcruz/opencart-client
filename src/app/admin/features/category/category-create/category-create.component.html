@@ -3,13 +3,19 @@
 <form>
   <div class="form-group">
     <label>Name</label>
-    <input type="text" id="name" name="name" class="form-control" #name="ngModel" [(ngModel)]="model.name"
-      (change)="display(name)" required minlength="5">
+    <input type="text" id="name" name="name" class="form-control" #name="ngModel" [(ngModel)]="model.name" required
+      minlength="5" maxlength="50">
+
+    <div class="text-danger" *ngIf="name.touched && name.invalid">
+      <div *ngIf="name.errors?.['required']">Name is required</div>
+      <div *ngIf="name.errors?.['minlength']">Name must be at least 5 characters</div>
+      <div *ngIf="name.errors?.['maxlength']">Name must be at most 50 characters</div>
+    </div>
   </div>
   <div class="form-group">
     <label>Description</label>
-    <textarea name="description" id="description" class="form-control" rows="5"
-      [(ngModel)]="model.description"></textarea>
+    <textarea name="description" id="description" class="form-control" rows="5" [(ngModel)]="model.description"
+      maxlength="250"></textarea>
   </div>
   <div class="flex justify-content-end">
     <app-button type="submit" label="Save"></app-button>
