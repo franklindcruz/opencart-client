@@ -3,7 +3,7 @@
 
 :root {
     --primary-color: #a9e352;
-    --secondary-color: #f5f5f5;
+    --secondary-color: #f5f5f5b2;
     --success-color: #87d8a7;
     --info-color: #51d7ef;
     --warning-color: #fed044;
@@ -84,4 +84,27 @@ body {
 
 .form-control:focus {
     outline: 1px solid var(--success-color);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table td,
+.table th {
+    border: 1px solid #a8a8a8;
+    padding: 5px;
+}
+
+.table th {
+    background-color: var(--secondary-color);
+}
+
+.table tr:nth-child(even) {
+    background-color: var(--secondary-color);
+}
+
+.table tr:hover {
+    background-color: var(--primary-color);
 }

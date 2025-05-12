@@ -25,6 +25,7 @@ export class CategoryCreateComponent {
   id: number | null = null;
 
   isEditMode = false;
+
   constructor(
     private categoryService: CategoryService,
     private router: Router,
@@ -33,25 +34,56 @@ export class CategoryCreateComponent {
     this.id = this.route.snapshot.params['id'];
     if (this.id) {
       this.isEditMode = true;
-      this.InitForEditMode();
+      this.isProcessing = true;
+      this.initForEditMode();
     }
   }
 
-  onSubmit(form: NgForm) {
-    this.isProcessing = true;
-    this.categoryService.create(this.model).subscribe((result) => {
-      console.log(result);
-      this.model.name = '';
-      this.model.description = null;
-      this.isProcessing = false;
-      this.router.navigateByUrl('/admin/category');
+  initForEditMode() {
+    this.categoryService.getById(this.id!).subscribe({
+      next: (result) => {
+        this.model = result.data!;
+        this.isProcessing = false;
+      },
+      error: () => {
+        alert('Something went wrong.');
+        this.isProcessing = true;
+      },
     });
   }
 
-  InitForEditMode() {
-    this.categoryService.getById(this.id!).subscribe((result) => {
-      this.model.name = result.data.name;
-      this.model.description = result.data.description;
+  onSubmit() {
+    this.isProcessing = true;
+    if (this.isEditMode) {
+      this.handleEdit();
+    } else {
+      this.handleCreate();
+    }
+  }
+
+  handleCreate() {
+    this.categoryService.create(this.model).subscribe({
+      next: () => {
+        this.router.navigate(['/admin/category']);
+      },
+
+      error: () => {
+        alert('Something went wrong.');
+        this.isProcessing = false;
+      },
+    });
+  }
+
+  handleEdit() {
+    this.categoryService.update(this.id!, this.model).subscribe({
+      next: () => {
+        this.router.navigate(['/admin/category']);
+      },
+
+      error: () => {
+        alert('Something went wrong.');
+        this.isProcessing = false;
+      },
     });
   }
 }

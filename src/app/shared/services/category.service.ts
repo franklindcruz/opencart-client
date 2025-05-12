@@ -27,4 +27,12 @@ export class CategoryService {
       data
     );
   }
+
+  update(id: number, data: CategoryCreateDto) {
+    return this.httpClient.put<Result<any>>(
+      `http://localhost:5184/api/Category/${id}`,
+      data
+    );
+  }
+  
 }

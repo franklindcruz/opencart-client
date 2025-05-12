@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import Result from '../../../../shared/types/result';
+    import { Component, OnInit } from '@angular/core';
 import CategoryViewDto from '../../../../shared/dtos/category-view-dto';
 import { CategoryService } from '../../../../shared/services/category.service';
 @Component({
@@ -10,8 +8,7 @@ import { CategoryService } from '../../../../shared/services/category.service';
   styleUrl: './category-list.component.css',
 })
 export class CategoryListComponent implements OnInit {
-
-  categories?: CategoryViewDto[]; 
+  categories?: CategoryViewDto[]; // This is saying that categories is an array of CategoryViewDto objects or null 
 
   constructor(private categoryService: CategoryService) {}
 
