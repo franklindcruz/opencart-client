@@ -6,7 +6,7 @@ import { SignupComponent } from './features/signup/signup.component';
 import { AuthLayoutComponent } from './shared/components/auth-layout/auth-layout.component';
 import { NavbarComponent } from '../shared/components/navbar/navbar.component';
 import { ButtonComponent } from '../shared/components/button/button.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
     declarations: [
         AuthLayoutComponent,
@@ -17,7 +17,8 @@ import { FormsModule } from '@angular/forms';
         AuthRoutingModule,
         NavbarComponent,
         ButtonComponent,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ]
 })
 export class AuthModule { }

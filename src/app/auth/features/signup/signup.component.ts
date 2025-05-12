@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-signup',
   standalone: false,
@@ -8,9 +7,18 @@ import { FormBuilder } from '@angular/forms';
   styleUrl: './signup.component.css',
 })
 export class SignupComponent {
-  constructor(private fb: FormBuilder) {}
+  signupForm: FormGroup;
+  constructor(private fb: FormBuilder) {
+    this.signupForm = fb.group({
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+    });
+  }
 
   onSubmit() {
-    console.log('Form Sumitted Successfully');
+    console.log(this.signupForm);
   }
 }
