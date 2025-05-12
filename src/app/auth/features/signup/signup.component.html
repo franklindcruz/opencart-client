@@ -6,6 +6,15 @@
       <div class="form-group">
         <label>First Name</label>
         <input type="text" class="form-control" formControlName="firstName" />
+        <div class="text-danger" *ngIf="signupForm.get('firstName')?.invalid && signupForm.get('firstName')?.touched">
+          <p *ngIf="signupForm.get('firstName')?.errors?.['required']">First Name is required.</p>
+          <p *ngIf="signupForm.get('firstName')?.errors?.['minlength']">
+            First Name must be at least 2 characters long.
+          </p>
+          <p *ngIf="signupForm.get('firstName')?.errors?.['maxlength']">
+            First Name cannot be more than 25 characters long.
+          </p>
+        </div>
       </div>
       <div class="form-group">
         <label>Last Name</label>
