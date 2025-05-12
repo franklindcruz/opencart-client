@@ -60,6 +60,10 @@
     color: var(--danger-color);
 }
 
+.text-center {
+    text-align: center;
+}
+
 .border {
     border: 2px solid var(--black-color);
 }
@@ -86,6 +90,22 @@ body {
 
 .justify-content-end {
     justify-content: end;
+}
+
+.grid {
+    display: grid;
+}
+
+.cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.gap-5 {
+    gap: 5px;
+}
+
+.gap-10 {
+    gap: 10px;
 }
 
 .form-group {
@@ -124,7 +144,7 @@ body {
 }
 
 .table tr:nth-child(even) {
-    background-color: var(--secondary-color);
+    background-color: var(--white-color);
 }
 
 .table thead,

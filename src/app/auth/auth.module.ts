@@ -5,6 +5,8 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { SignupComponent } from './features/signup/signup.component';
 import { AuthLayoutComponent } from './shared/components/auth-layout/auth-layout.component';
 import { NavbarComponent } from '../shared/components/navbar/navbar.component';
+import { ButtonComponent } from '../shared/components/button/button.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
     declarations: [
         AuthLayoutComponent,
@@ -13,7 +15,9 @@ import { NavbarComponent } from '../shared/components/navbar/navbar.component';
     imports: [
         CommonModule,
         AuthRoutingModule,
-        NavbarComponent
+        NavbarComponent,
+        ButtonComponent,
+        FormsModule
     ]
 })
 export class AuthModule { }
