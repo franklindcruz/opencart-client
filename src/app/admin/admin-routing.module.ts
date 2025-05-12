@@ -13,6 +13,7 @@ const routes: Routes = [
       { path: '', component: DashboardComponent },
       { path: 'category', component: CategoryListComponent },
       { path: 'category/create', component: CategoryCreateComponent },
+      { path: 'category/edit/:id', component: CategoryCreateComponent },
     ],
   },
 ];

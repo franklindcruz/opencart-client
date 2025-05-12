@@ -14,7 +14,6 @@ export class CategoryService {
       'http://localhost:5150/Category'
     );
   }
-
   create(data: CategoryCreateDto) {
     return this.httpClient.post<Result<any>>(
       'http://localhost:5150/Category',
