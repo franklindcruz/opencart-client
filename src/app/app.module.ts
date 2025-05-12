@@ -13,26 +13,27 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BadgeComponent } from './shared/components/badge/badge.component';
+import { LoadingIndicatorComponent } from './shared/components/loading-indicator/loading-indicator.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AlertComponent,
-    ContactComponent,
-    AboutComponent,
-    HomeComponent,
-    NavbarComponent,
-    FooterComponent,
-    BadgeComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        AlertComponent,
+        BadgeComponent,
+        HomeComponent,
+        AboutComponent,
+        ContactComponent,
+        FooterComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        LoadingIndicatorComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
