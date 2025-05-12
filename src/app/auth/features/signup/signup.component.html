@@ -3,6 +3,8 @@
 
   <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
     <div class="grid cols-2 gap-10">
+
+      <!-- First Name -->
       <div class="form-group">
         <label>First Name</label>
         <input type="text" class="form-control" formControlName="firstName" />
@@ -16,29 +18,52 @@
           </p>
         </div>
       </div>
+
+      <!-- Last Name -->
       <div class="form-group">
         <label>Last Name</label>
         <input type="text" class="form-control" formControlName="lastName" />
+        <div class="text-danger" *ngIf="signupForm.get('lastName')?.invalid && signupForm.get('lastName')?.touched">
+          <p *ngIf="signupForm.get('lastName')?.errors?.['required']">Last Name is required.</p>
+          <p *ngIf="signupForm.get('lastName')?.errors?.['minlength']">Last Name must be at least 2 characters.</p>
+          <p *ngIf="signupForm.get('lastName')?.errors?.['maxlength']">Last Name must be under 25 characters.</p>
+        </div>
       </div>
     </div>
 
+    <!-- Email -->
     <div class="form-group">
       <label>Email</label>
       <input type="email" class="form-control" formControlName="email" />
+      <div class="text-danger" *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+        <p *ngIf="signupForm.get('email')?.errors?.['required']">Email is required.</p>
+        <p *ngIf="signupForm.get('email')?.errors?.['email']">Enter a valid email address.</p>
+      </div>
     </div>
 
+    <!-- Password -->
     <div class="form-group">
       <label>Password</label>
       <input type="password" class="form-control" formControlName="password" />
+      <div class="text-danger" *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+        <p *ngIf="signupForm.get('password')?.errors?.['required']">Password is required.</p>
+        <p *ngIf="signupForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters.</p>
+      </div>
     </div>
 
+    <!-- Confirm Password -->
     <div class="form-group">
       <label>Confirm Password</label>
       <input type="password" class="form-control" formControlName="confirmPassword" />
+      <div class="text-danger"
+        *ngIf="signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched">
+        <p *ngIf="signupForm.get('confirmPassword')?.errors?.['required']">Confirm Password is required.</p>
+        <p *ngIf="signupForm.get('confirmPassword')?.errors?.['passwordMismatch']">Passwords do not match.</p>
+      </div>
     </div>
 
     <div class="grid">
-      <app-button type="submit" label="Signup"></app-button>
+      <app-button type="submit" label="Signup" [disabled]="signupForm.invalid"></app-button>
     </div>
   </form>
 </div>

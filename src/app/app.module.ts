@@ -14,6 +14,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BadgeComponent } from './shared/components/badge/badge.component';
 import { LoadingIndicatorComponent } from './shared/components/loading-indicator/loading-indicator.component';
+import { FieldErrorsComponent } from './shared/components/field-errors/field-errors.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { LoadingIndicatorComponent } from './shared/components/loading-indicator
         AboutComponent,
         ContactComponent,
         FooterComponent,
+        FieldErrorsComponent,
     ],
     imports: [
         BrowserModule,
