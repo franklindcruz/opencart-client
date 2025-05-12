@@ -10,7 +10,8 @@ import { CategoryService } from '../../../../shared/services/category.service';
   styleUrl: './category-list.component.css',
 })
 export class CategoryListComponent implements OnInit {
-  categories?: CategoryViewDto[];
+
+  categories?: CategoryViewDto[]; 
 
   constructor(private categoryService: CategoryService) {}
 
