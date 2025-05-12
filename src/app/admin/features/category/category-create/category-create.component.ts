@@ -33,6 +33,7 @@ export class CategoryCreateComponent {
     this.id = this.route.snapshot.params['id'];
     if (this.id) {
       this.isEditMode = true;
+      this.InitForEditMode();
     }
   }
 
@@ -44,6 +45,13 @@ export class CategoryCreateComponent {
       this.model.description = null;
       this.isProcessing = false;
       this.router.navigateByUrl('/admin/category');
+    });
+  }
+
+  InitForEditMode() {
+    this.categoryService.getById(this.id!).subscribe((result) => {
+      this.model.name = result.data.name;
+      this.model.description = result.data.description;
     });
   }
 }

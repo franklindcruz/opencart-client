@@ -11,12 +11,19 @@ export class CategoryService {
 
   getAll() {
     return this.httpClient.get<Result<CategoryViewDto[]>>(
-      'http://localhost:5150/Category'
+      'http://localhost:5184/api/Category'
     );
   }
+
+  getById(id: number) {
+    return this.httpClient.get<Result<CategoryViewDto>>(
+      `http://localhost:5184/api/Category/${id}`
+    );
+  }
+
   create(data: CategoryCreateDto) {
     return this.httpClient.post<Result<any>>(
-      'http://localhost:5150/Category',
+      'http://localhost:5184/api/Category',
       data
     );
   }
