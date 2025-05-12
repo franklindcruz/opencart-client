@@ -3,11 +3,11 @@
 
 :root {
     --primary-color: #a9e352;
-    --secondary-color: #f5f5f5b2;
+    --secondary-color: #f5f5f5;
     --success-color: #87d8a7;
     --info-color: #51d7ef;
     --warning-color: #fed044;
-    --danger-color: #f3807c;
+    --danger-color: #ec5c57;
     --white-color: #ffffff;
     --black-color: #000000;
 }
@@ -34,6 +34,26 @@
 
 .bg-danger {
     background-color: var(--danger-color);
+}
+
+.text-primary {
+    color: var(--primary-color);
+}
+
+.text-secondary {
+    color: var(--secondary-color);
+}
+
+.text-success {
+    color: var(--success-color);
+}
+
+.text-info {
+    color: var(--info-color);
+}
+
+.text-warning {
+    color: var(--warning-color);
 }
 
 .text-danger {
@@ -76,9 +96,10 @@ body {
 }
 
 .form-control {
-    border: 1px solid #a8a8a8;
+    border: 1px solid var(--black-color);
+    border-bottom-width: 3px;
+    border-right-width: 3px;
     padding: 5px;
-    border-radius: 5px;
     font-size: 16px;
 }
 
@@ -89,22 +110,33 @@ body {
 .table {
     width: 100%;
     border-collapse: collapse;
+    border-style: solid;
+    border-color: var(--black-color);
+    border-bottom-width: 3px;
+    border-right-width: 3px;
 }
 
 .table td,
 .table th {
-    border: 1px solid #a8a8a8;
-    padding: 5px;
-}
-
-.table th {
-    background-color: var(--secondary-color);
+    padding: 15px 10px;
+    border-bottom: 1px solid var(--black-color);
+    text-align: center;
 }
 
 .table tr:nth-child(even) {
     background-color: var(--secondary-color);
 }
 
-.table tr:hover {
-    background-color: var(--primary-color);
+.table thead,
+tfoot {
+    background-color: var(--success-color);
+}
+
+label {
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: initial;
 }
