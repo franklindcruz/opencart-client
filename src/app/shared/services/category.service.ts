@@ -10,29 +10,18 @@ export class CategoryService {
   constructor(private httpClient: HttpClient) {}
 
   getAll() {
-    return this.httpClient.get<Result<CategoryViewDto[]>>(
-      'http://localhost:5184/api/Category'
-    );
+    return this.httpClient.get<Result<CategoryViewDto[]>>('Category');
   }
 
   getById(id: number) {
-    return this.httpClient.get<Result<CategoryViewDto>>(
-      `http://localhost:5184/api/Category/${id}`
-    );
+    return this.httpClient.get<Result<CategoryViewDto>>(`Category/${id}`);
   }
 
   create(data: CategoryCreateDto) {
-    return this.httpClient.post<Result<any>>(
-      'http://localhost:5184/api/Category',
-      data
-    );
+    return this.httpClient.post<Result<any>>('Category', data);
   }
 
   update(id: number, data: CategoryCreateDto) {
-    return this.httpClient.put<Result<any>>(
-      `http://localhost:5184/api/Category/${id}`,
-      data
-    );
+    return this.httpClient.put<Result<any>>(`Category/${id}`, data);
   }
-  
 }

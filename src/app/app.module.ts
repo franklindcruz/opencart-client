@@ -5,16 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { AlertComponent } from './shared/components/alert/alert.component';
-
-import { ContactComponent } from './pages/contact/contact.component';
-import { AboutComponent } from './pages/about/about.component';
-import { HomeComponent } from './pages/home/home.component';
-import { NavbarComponent } from './shared/components/navbar/navbar.component';
-import { FooterComponent } from './shared/components/footer/footer.component';
-import { HttpClientModule } from '@angular/common/http';
 import { BadgeComponent } from './shared/components/badge/badge.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { LoadingIndicatorComponent } from './shared/components/loading-indicator/loading-indicator.component';
-import { FieldErrorsComponent } from './shared/components/field-errors/field-errors.component';
+import { baseUrlInterceptor } from './shared/interceptors/base-url.interceptor';
 
 
 @NgModule({
@@ -26,16 +24,16 @@ import { FieldErrorsComponent } from './shared/components/field-errors/field-err
         AboutComponent,
         ContactComponent,
         FooterComponent,
-        
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
-        HttpClientModule,
         LoadingIndicatorComponent
     ],
-    providers: [],
+    providers: [
+        provideHttpClient(withInterceptors([baseUrlInterceptor])),
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
