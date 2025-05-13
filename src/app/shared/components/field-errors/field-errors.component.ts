@@ -33,6 +33,12 @@ export class FieldErrorsComponent implements OnChanges {
         case 'maxlength':
           this.errorMessages.push(`This field is too long.`);
           break;
+        default:
+          const message = this.errors[key];
+          if (message && typeof message === 'string') {
+            this.errorMessages.push(message);
+          }
+          break;
       }
     }
   }

@@ -1,41 +1,45 @@
 <div class="signup">
-    <h1 class="text-center">Signup</h1>
+  <h1 class="text-center">Signup</h1>
 
-    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-        <div class="grid cols-2 gap-10">
-            <div class="form-group">
-                <label>First Name</label>
-                <input type="text" class="form-control" formControlName="firstName" />
-                <app-field-errors [errors]="signupForm.get('firstName')?.errors"
-                    [field]="signupForm.get('firstName')"></app-field-errors>
-            </div>
-            <div class="form-group">
-                <label>Last Name</label>
-                <input type="text" class="form-control" formControlName="lastName" />
-                <app-field-errors [errors]="signupForm.get('lastName')?.errors"></app-field-errors>
-            </div>
-        </div>
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div class="grid cols-2 gap-10">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" class="form-control" formControlName="firstName" />
+        <app-field-errors [errors]="signupForm.get('firstName')?.errors"
+          [field]="signupForm.get('firstName')"></app-field-errors>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" class="form-control" formControlName="lastName" />
+        <app-field-errors [errors]="signupForm.get('lastName')?.errors"
+          [field]="signupForm.get('lastName')"></app-field-errors>
+      </div>
+    </div>
 
-        <div class="form-group">
-            <label>Email</label>
-            <input type="email" class="form-control" formControlName="email" />
-            <app-field-errors [errors]="signupForm.get('email')?.errors"></app-field-errors>
-        </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control" formControlName="email" />
+      <app-field-errors [errors]="signupForm.get('email')?.errors"
+        [field]="signupForm.get('email')"></app-field-errors>
+    </div>
 
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" class="form-control" formControlName="password" />
-            <app-field-errors [errors]="signupForm.get('password')?.errors"></app-field-errors>
-        </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" formControlName="password" />
+      <app-field-errors [errors]="signupForm.get('password')?.errors"
+      [field]="signupForm.get('password')"></app-field-errors>
+    </div>
 
-        <div class="form-group">
-            <label>Confirm Password</label>
-            <input type="password" class="form-control" formControlName="confirmPassword" />
-            <app-field-errors [errors]="signupForm.get('confirmPassword')?.errors"></app-field-errors>
-        </div>
+    <div class="form-group">
+      <label>Confirm Password</label>
+      <input type="password" class="form-control" formControlName="confirmPassword" />
+      <app-field-errors [errors]="signupForm.get('confirmPassword')?.errors"
+      [field]="signupForm.get('confirmPassword')"></app-field-errors>
+    </div>
 
-        <div class="grid">
-            <app-button type="submit" label="Signup"></app-button>
-        </div>
-    </form>
+    <div class="grid">
+      <app-button type="submit" label="Signup"></app-button>
+    </div>
+  </form>
 </div>
