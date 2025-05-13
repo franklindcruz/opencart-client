@@ -1,1 +1,3 @@
-<p>field-errors works!</p>
+<ul *ngIf="field?.touched && field?.invalid">
+    <li *ngFor="let item of errorMessages">{{ item }}</li>
+</ul>

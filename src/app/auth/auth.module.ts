@@ -7,18 +7,20 @@ import { AuthLayoutComponent } from './shared/components/auth-layout/auth-layout
 import { NavbarComponent } from '../shared/components/navbar/navbar.component';
 import { ButtonComponent } from '../shared/components/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FieldErrorsComponent } from "../shared/components/field-errors/field-errors.component";
 @NgModule({
     declarations: [
         AuthLayoutComponent,
         SignupComponent
     ],
     imports: [
-        CommonModule,
-        AuthRoutingModule,
-        NavbarComponent,
-        ButtonComponent,
-        FormsModule,
-        ReactiveFormsModule
-    ]
+    CommonModule,
+    AuthRoutingModule,
+    NavbarComponent,
+    ButtonComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    FieldErrorsComponent
+]
 })
 export class AuthModule { }

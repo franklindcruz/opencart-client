@@ -26,7 +26,7 @@ import { FieldErrorsComponent } from './shared/components/field-errors/field-err
         AboutComponent,
         ContactComponent,
         FooterComponent,
-        FieldErrorsComponent,
+        
     ],
     imports: [
         BrowserModule,
