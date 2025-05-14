@@ -13,6 +13,8 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { LoadingIndicatorComponent } from './shared/components/loading-indicator/loading-indicator.component';
 import { baseUrlInterceptor } from './shared/interceptors/base-url.interceptor';
+import { Error404Component } from './pages/error-404/error-404.component';
+import { ButtonComponent } from './shared/components/button/button.component';
 
 
 @NgModule({
@@ -24,12 +26,14 @@ import { baseUrlInterceptor } from './shared/interceptors/base-url.interceptor';
         AboutComponent,
         ContactComponent,
         FooterComponent,
+        Error404Component,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
-        LoadingIndicatorComponent
+        LoadingIndicatorComponent,
+        ButtonComponent
     ],
     providers: [
         provideHttpClient(withInterceptors([baseUrlInterceptor])),

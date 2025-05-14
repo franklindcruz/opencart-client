@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { Error404Component } from './pages/error-404/error-404.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: '**',
+    component: Error404Component,
   },
 ];
 
